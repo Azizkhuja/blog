@@ -9,9 +9,12 @@ export default {
       title: 'Title of blog article',
     },
     {
-      name: 'slog',
-      type: 'slog',
-      title: 'Title of slog',
+      name: 'slug',
+      type: 'slug',
+      title: 'Title of slug',
+      options: {
+        source: 'title',
+      },
     },
     {
       name: 'titleImage',
