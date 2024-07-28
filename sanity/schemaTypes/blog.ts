@@ -36,5 +36,10 @@ export default {
         },
       ],
     },
+    {
+        name: 'createdAt',
+        type: 'datetime',
+        title: 'Created At',
+      },
   ],
 }

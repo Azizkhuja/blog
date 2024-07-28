@@ -7,7 +7,10 @@ export default function Navbar() {
       <Link href="/" className="font-bold text-3xl">
         Dev <span className="text-blue-500">Logs</span>
       </Link>
-      <ModeToggle />
+      <div>
+        test
+        <ModeToggle />
+      </div>
     </nav>
   );
 }
