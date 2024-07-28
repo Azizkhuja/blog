@@ -40,7 +40,7 @@ export default async function Home() {
             <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
               {post.smallDescription}
             </p>
-            <Button asChild className="w-full mt-7">
+            <Button asChild className="w-full mt-7 text-white">
               <Link href={`blog/${post.currentSlug}`}>Read more </Link>
             </Button>
           </CardContent>

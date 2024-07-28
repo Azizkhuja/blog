@@ -41,16 +41,16 @@ export default async function BlogArticle({
         <span className="mb-3 block text-3xl leading-8 font-bold tracking-tight sm:text-4xl ">
           {data.title}
         </span>
-        <span className="block text-base ">Created on: {formatDate(data._createdAt)}</span>
-        <div className="h-0.5 bg-primary w-16 mt-4"></div>
+        <span className="block text-base text-gray-500">Created on: {formatDate(data._createdAt)}</span>
+        <div className="h-0.5 bg-gray-500 w-16 mt-4"></div>
       </h1>
       <Image
         src={urlFor(data.titleImage).url()}
         alt="title image"
-        width={800}
-        height={800}
+        width={600}
+        height={600}
         priority
-        className="rounded-lg mt-8 border"
+        className="rounded-lg mt-8 border object-cover"
       />
 
       <div className="mt-6 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
