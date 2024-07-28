@@ -3,6 +3,8 @@ import { client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
+export const revalidate = 30;
+
 async function getData(slug: string) {
   const query = `
     *[_type == "blog" && slug.current == '${slug}'] {
@@ -41,7 +43,9 @@ export default async function BlogArticle({
         <span className="mb-3 block text-3xl leading-8 font-bold tracking-tight sm:text-4xl ">
           {data.title}
         </span>
-        <span className="block text-base text-gray-500">Created on: {formatDate(data._createdAt)}</span>
+        <span className="block text-base text-gray-500">
+          Created on: {formatDate(data._createdAt)}
+        </span>
         <div className="h-0.5 bg-gray-500 w-16 mt-4"></div>
       </h1>
       <Image
