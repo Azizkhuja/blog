@@ -14,7 +14,7 @@ export default function Navbar() {
         <a href="https://www.linkedin.com/in/azizkhujakhujaev/" target="_blank">
           <FaLinkedin size={28} className="mr-2" />
         </a>
-        <a href="https://t.me/devloperlogs" target="_blank">
+        <a href="https://t.me/https://t.me/devlogsbyazizkhuja" target="_blank">
           <FaTelegram size={28} className="mr-2" />
         </a>
         <ModeToggle />
