@@ -10,5 +10,5 @@ export interface fullBlog {
   content: any;
   currentSlug: string;
   titleImage: any;
-  _createdAt: any;
+  _updatedAt: any;
 }

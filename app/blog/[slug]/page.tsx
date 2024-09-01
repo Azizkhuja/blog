@@ -13,7 +13,7 @@ async function getData(slug: string) {
         title,
         content,
         titleImage,
-        _createdAt,
+        _updatedAt,
     }[0]
   `;
 
@@ -44,7 +44,7 @@ export default async function BlogArticle({
           {data.title}
         </span>
         <span className="block text-base text-gray-500">
-          Yaratilgan sanasi: {formatDate(data._createdAt)}
+          Yaratilgan sanasi: {formatDate(data._updatedAt)}
         </span>
         <div className="h-0.5 bg-gray-500 w-16 mt-4"></div>
       </h1>
