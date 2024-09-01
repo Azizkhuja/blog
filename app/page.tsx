@@ -43,7 +43,7 @@ export default async function Home() {
               {post.smallDescription}
             </p>
             <Button asChild className="w-full mt-7 text-white">
-              <Link href={`blog/${post.currentSlug}`}>Read more </Link>
+              <Link href={`blog/${post.currentSlug}`}>O&apos;qish </Link>
             </Button>
           </CardContent>
         </Card>
