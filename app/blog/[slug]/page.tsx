@@ -27,7 +27,6 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: fullBlog = await getData(params.slug);
-  console.log(data._createdAt);
 
   function formatDate(dateString: string) {
     const date = new Date(dateString);
