@@ -1,5 +1,6 @@
 import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
+import { Card } from "@/components/ui/card";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
@@ -59,6 +60,17 @@ export default async function BlogArticle({
       <div className="mt-6 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
         <PortableText value={data.content} />
       </div>
+      <Card className="my-5 p-10">
+        Yangi maqolani o&apos;qish uchun{" "}
+        <a
+          className="text-blue-500"
+          href="https://t.me/devlogsbyazizkhuja"
+          target="_blank"
+        >
+          @devlogsbyazizkhuja
+        </a>{" "}
+        telegram kanalimga qo&apos;shilib oling!
+      </Card>
     </div>
   );
 }
