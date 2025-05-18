@@ -1,10 +1,26 @@
 import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import { Card } from "@/components/ui/card";
-import { PortableText } from "@portabletext/react";
+import {
+  PortableText,
+  PortableTextTypeComponentProps,
+} from "@portabletext/react";
 import Image from "next/image";
 
 export const revalidate = 30;
+
+type ImageValue = {
+  asset: {
+    _ref: string;
+    _type: "reference";
+  };
+  alt?: string;
+};
+
+type CodeBlockValue = {
+  language?: string;
+  code: string;
+};
 
 async function getData(slug: string) {
   const query = `
@@ -21,6 +37,33 @@ async function getData(slug: string) {
 
   return data;
 }
+
+const components = {
+  types: {
+    image: ({ value }: PortableTextTypeComponentProps<ImageValue>) => {
+      const imageUrl = urlFor(value).width(800).url();
+      return (
+        <div style={{ position: "relative", width: "100%", margin: "1rem 0" }}>
+          <Image
+            src={imageUrl}
+            alt={value.alt || "Blog image"}
+            width={800}
+            height={500}
+            layout="responsive"
+            objectFit="contain"
+          />
+        </div>
+      );
+    },
+    code: ({ value }: PortableTextTypeComponentProps<CodeBlockValue>) => (
+      <pre className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 p-4 rounded-lg overflow-x-auto">
+        <code className={`language-${value.language || "plaintext"}`}>
+          {value.code}
+        </code>
+      </pre>
+    ),
+  },
+};
 
 export default async function BlogArticle({
   params,
@@ -58,7 +101,7 @@ export default async function BlogArticle({
       />
 
       <div className="mt-6 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
-        <PortableText value={data.content} />
+        <PortableText value={data.content} components={components} />
       </div>
       <Card className="my-5 p-10">
         Yangi maqolani o&apos;qish uchun{" "}
