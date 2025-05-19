@@ -59,6 +59,16 @@
   }
 }
 
+.prose code::before,
+.prose code::after {
+  content: none !important;
+}
+
+.dark .prose code::before,
+.dark .prose code::after {
+  content: none !important;
+}
+
 @layer base {
   * {
     @apply border-border;

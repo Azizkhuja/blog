@@ -63,6 +63,13 @@ const components = {
       </pre>
     ),
   },
+  marks: {
+    code: ({ children }: any) => (
+      <code className="bg-gray-200 dark:bg-gray-800 px-1 rounded">
+        {children}
+      </code>
+    ),
+  },
 };
 
 export default async function BlogArticle({
