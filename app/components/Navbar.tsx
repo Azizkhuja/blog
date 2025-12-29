@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav className="w-full relative flex items-center justify-between max-w-3xl mx-auto px-4 py-5">
       <Link href="/" className="hover:text-blue-500 font-medium">
-        Azizkhuja's Blog
+        Azizkhuja&apos;s Blog
       </Link>
       <div className="flex justify-center items-center gap-4">
         <Link href={`/blog?lang=${lang}`} className="hover:text-blue-500 font-medium">
