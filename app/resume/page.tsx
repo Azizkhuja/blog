@@ -45,7 +45,7 @@ export default async function Resume({
                 <h1 className="text-3xl font-bold">{data.title || t.resume}</h1>
                 {data.resumePdf && (
                     <a href={data.resumePdf} download target="_blank">
-                        <Button className="font-medium">{t.downloadResume}</Button>
+                        <Button className="font-medium text-white">{t.downloadResume}</Button>
                     </a>
                 )}
             </div>

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
@@ -27,9 +28,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Suspense fallback={<div className="h-16" />}>
+            <Navbar />
+          </Suspense>
           <main className="max-w-3xl mx-auto px-4 flex-1 w-full">{children}</main>
-          <Footer />
+          <Suspense fallback={<div className="h-16" />}>
+            <Footer />
+          </Suspense>
           <Analytics />
         </ThemeProvider>
       </body>
