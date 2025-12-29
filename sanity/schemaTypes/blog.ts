@@ -17,6 +17,19 @@ export default {
       },
     },
     {
+      name: "language",
+      type: "string",
+      title: "Language",
+      options: {
+        list: [
+          { title: "English", value: "en" },
+          { title: "Uzbek", value: "uz" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "en",
+    },
+    {
       name: "titleImage",
       type: "image",
       title: "Title image",
@@ -41,6 +54,13 @@ export default {
           type: "code",
         },
       ],
+    },
+    {
+      name: "seoKeywords",
+      type: "array",
+      title: "SEO Keywords",
+      description: "Keywords for SEO (not visible on page)",
+      of: [{ type: "string" }],
     },
     {
       name: "createdAt",

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { Analytics } from '@vercel/analytics/react';
 
-const inter = Inter({ subsets: ["latin"] });
+const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Welcome to DevLogs by Azizkhuja",
-  description: "DevLogs blog",
+  title: "Welcome to Azizkhuja's Blog",
+  description: "Azizkhuja's Blog",
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${sourceSans.className} flex flex-col min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,7 +28,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="max-w-2xl mx-auto px-4">{children}</main>
+          <main className="max-w-3xl mx-auto px-4 flex-1 w-full">{children}</main>
+          <Footer />
           <Analytics />
         </ThemeProvider>
       </body>
